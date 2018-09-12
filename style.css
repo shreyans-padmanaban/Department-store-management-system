@@ -7,7 +7,15 @@
     border: none;
 		font:Varela round;
 }
-
+.dropbtn:hover {
+    background-color: #111111;
+    color: white;
+		border-radius: 4px;
+    padding: 40px;
+    font-size: 16px;
+    border: none;
+		font:Varela round;
+}
 .dropdown {
     position: relative;
     display: inline-block;
@@ -35,7 +43,8 @@
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 h1{
-	ont-family: Varela round;
+  text-decoration: none;
+	font-family: Varela round;
 	font-size: 50px;
 	color:
 	background-color: transparent;
@@ -45,6 +54,17 @@ color:white;}
 box-sizing: border-box;
 }
 
+p,b{
+  color:white;
+  font: Varela round;
+}
+a{
+  text-decoration: none;
+  color:#222222
+}
+a:hover{
+  color:white;
+}
 *:focus {
 	outline: none;
 }
@@ -103,7 +123,7 @@ input[type=text] {
     font-family: Varela round;
 }
 input:focus {
-border: 2px solid #3498DB;
+border: 2px solid transparent;
 box-shadow: none;
 }
 
@@ -125,7 +145,7 @@ box-shadow: none;
 }
 
 .btn:hover {
-  background-color: #545454;
+  background-color: transparent;
 }
 
 .login-link {
