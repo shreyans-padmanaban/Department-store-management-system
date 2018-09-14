@@ -1,5 +1,5 @@
 import sqlite3
-from tkinter import *
+import random
 conn = sqlite3.connect('Emp.db')
 c=conn.cursor()
 
@@ -11,5 +11,8 @@ def create_table():
     c.execute('CREATE TABLE IF NOT EXISTS product(p_id INTEGER PRIMARY KEY,name TEXT,stock INTEGER,exp_date DATE,mrp INTEGER,aisle_no INTEGER)')
 
 create_table()
+
+
+
 conn.commit()
 conn.close()

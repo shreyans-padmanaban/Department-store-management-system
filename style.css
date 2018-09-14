@@ -116,11 +116,31 @@ input[type=text1] {
     border-color: white;
 		padding-bottom: 40px;
 }
+
+input[type=name] {
+    font-family: Varela round;
+		padding-bottom: 40px;
+}
+
+input[type=dropdown] {
+    font-family: Varela round;
+		padding-bottom: 40px;
+}
+
+input[type=radio] {
+    font-family: Varela round;
+    font-size: 50px;
+    align-items: center;
+}
 input[type=submit] {
-	color:white;
+	color:black;
+}
+input[type=emp] {
+	color:black;
 }
 input[type=text] {
     font-family: Varela round;
+    background-color:#111111;
 }
 input:focus {
 border: 2px solid transparent;
@@ -139,7 +159,7 @@ box-shadow: none;
   border-radius: 3px;
   box-shadow: none;
   transition: 0.25s;
-  display: block;
+  display: inline-block;
   width: 250px;
   margin: 0 auto;
 }

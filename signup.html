@@ -3,6 +3,9 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
 <style>
 body {
     font-family: Varela round;
@@ -78,14 +81,13 @@ a {
     <p>Please fill in this form to register employee.</p>
     <hr>
 
-  <!--  <label for="email"><b>Name</b></label>-->
+    <!--dept TEXT,emp_id INTEGER,name TEXT,mobile INTEGER,addr TEXT,sex TEXT,dob DATE,salary INTEGER,pass TEXT-->
     <input type="text" placeholder="Name" name="email" required>
-    <!--emp_id INTEGER,name TEXT,mobile INTEGER,addr TEXT,sex TEXT,dob DATE,salary INTEGER,pass TEXT-->
-    <input type="password" placeholder="Department" name="psw" required>
-    <input type="password" placeholder="Department" name="psw" required>
-    <input type="password" placeholder="Department" name="psw" required>
-    <input type="password" placeholder="Department" name="psw" required>
-    <input type="password" placeholder="Department" name="psw" required>
+    <input type="text" placeholder="Department" name="dept" required>
+    <input type="text" placeholder="Number" name="number" required>
+    <input type="date" placeholder="Date of birth" name="psw" required>
+    <input type="text" placeholder="Salary" name="psw" required>
+    <input type="emp" placeholder="Generate employee ID" name="eid" required>
     <hr>
     <p>By registering employee,the employer assures that the employee consents to the <a href="#">Terms & Privacy</a>.</p>
 
@@ -93,7 +95,7 @@ a {
   </div>
 
   <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <p>Already have an account? <a href="C:\Users\HP\Documents\GitHub\Department-store-management-system\front.html">Sign in</a>.</p>
   </div>
 </form>
 
