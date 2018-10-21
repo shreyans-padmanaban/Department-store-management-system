@@ -47,7 +47,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if (isset($_POST ["address"])){
-      $address=trim($_POST["address"]);
+      if(empty(trim($_POST["address"]))){
+        echo "Please enter an address";
+      }
+      else{
+        $sql = "SELECT id FROM users WHERE address = ?";
+
+        if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+
+            // Set parameters
+            $param_address = trim($_POST["address"]);
+
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                /* store result */
+                mysqli_stmt_store_result($stmt);
+                $address = trim($_POST["address"]);
+            } else{
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+        }
+      }
 
     // Validate password
     if(empty(trim($_POST["password"]))){
@@ -111,7 +133,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <div class="wrapper"><center>
         <h2>Sign Up</h2>
-        <p>Please fill this form to create an account.</p>
+        <p>Please fill this form to register an employee.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
           <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
@@ -126,15 +148,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>
 
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+            <div class="form-group <?php echo (!empty($address)) ? 'has-error' : ''; ?>">
                 <label>Address</label>
-                <input type="text" name="address" class="form-control" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
+                <input type="text" name="address" class="form-control" value="<?php echo $address; ?>">
+                <span class="help-block"><?php echo $address; ?></span>
             </div>
 
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Level of employment</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+                <input type="text" name="level" class="form-control" value="<?php echo $username; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>
 
