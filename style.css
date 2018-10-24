@@ -19,3 +19,8 @@ input{
   border-radius: 40px;
   margin:10px;
 }
+
+table{
+  background: white;
+  box-shadow: 4px 4px 4px;
+}

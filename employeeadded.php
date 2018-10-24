@@ -4,17 +4,14 @@
 </head>
 <body>
 <?php
-
 if(isset($_POST['submit'])){
     $data_missing = array();
     if(empty($_POST['name'])){
-        // Adds name to array
         $data_missing[] = 'Name';
     } else {
         $f_name = trim($_POST['name']);
     }
     if(empty($_POST['department'])){
-        // Adds name to array
         $data_missing[] = 'department';
     } else {
       $f_name = trim($_POST['department']);
@@ -40,22 +37,19 @@ if(isset($_POST['submit'])){
         $f_name = trim($_POST['password']);
     }
     if(empty($data_missing)){
-       require_once('mysqli_connect.php');
-       $query = "INSERT INTO employee (name,department,position,address,id,password) VALUES (?, ?, ?. ?, ?, ?)";
-       $stmt = mysqli_prepare($dbc, $query);
-       mysqli_stmt_bind_param($stmt, "ssssis", $name,$department,$position,$address,$id,$password);
-       mysqli_stmt_execute($stmt);
-       $affected_rows = mysqli_stmt_affected_rows($stmt);
-       if($affected_rows == 1){
-           echo 'Employee Added!';
-           mysqli_stmt_close($stmt);
-           mysqli_close($dbc);
-       } else {
-           echo 'Error Occurred<br />';
-           echo mysqli_error();
-           mysqli_stmt_close($stmt);
-           mysqli_close($dbc);
-       }
+       require('mysqli_connect.php');
+       $name = $_POST['name'];
+       $department = $_POST['department'];
+       $position = $_POST['position'];
+       $address=$_POST['address'];
+       $id=$_POST['id'];
+       $password=$_POST['password'];
+       $query = "INSERT INTO `employee` (name,department,position,address,id,password) VALUES ('$name','$department','$position','$address','$id','$password')";
+       $result = mysqli_query($dbc, $query);
+       if($result){
+           $smsg = "User Created Successfully.";
+       }else{
+           $fmsg ="User Registration Failed";}
    } else {
        echo 'You need to enter the following data<br />';
        foreach($data_missing as $missing){
@@ -64,6 +58,6 @@ if(isset($_POST['submit'])){
 ?>
 <html>
 <head>
-<link rel="stylesheets" type="text/css" href="style.css">
+<!--link rel="stylesheet" type="text/css" href="style.css"-->
 </head>
-<body>
+<body><center><a href="index.html">Go to Home page</a></div>
