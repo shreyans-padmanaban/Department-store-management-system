@@ -1,7 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Muli');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 body{
-  background-image: url('https://images.pexels.com/photos/264507/pexels-photo-264507.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');
-  background-size: cover;
-  background-repeat: no-repeat;
-  font: 14px 'Muli'; }
-.wrapper{ margin-left: 32%;width: 350px; padding: 20px; background-color: white;}
+background-image:url('https://images.pexels.com/photos/374894/pexels-photo-374894.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+background-repeat: no-repeat;
+background-size: cover;
+font-family: 'Montserrat';
+}
+
+div{
+  background: white;
+  margin-top:5%;
+  margin-left: 38%;
+  margin-right: 40%;
+  box-shadow: 4px 4px 4px;
+}
+
+input{
+  border-radius: 40px;
+  margin:10px;
+}
